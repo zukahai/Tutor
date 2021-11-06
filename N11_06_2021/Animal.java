@@ -1,13 +1,11 @@
 package N11_06_2021;
 
-import java.util.Scanner;
-
 public class Animal {
 	String name, gender;
 	int age;
 	
 	public Animal() {
-		this.name = "";
+		this.name = "default";
 		this.gender = "";
 		this.age = 0;
 	}
@@ -27,7 +25,6 @@ public class Animal {
 	public void nextAge() {
 		this.age++;
 	}
-	
 	
 	public void sleep() {
 		System.out.println("Sleeping..........");
