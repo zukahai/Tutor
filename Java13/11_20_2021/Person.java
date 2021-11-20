@@ -24,6 +24,21 @@ public class Person {
 		return "[name=" + this.name + ", gender=" + this.gender + ", age=" + this.age + "]";
 	}
 	
+	public int getYearOfbirthday() {
+		return 2021 - this.age;
+	}
+	
+	public void swapGender() {
+		if (this.gender == "Male")
+			this.gender = "Female";
+		else
+			this.gender = "Male";
+	}
+	
+	public void nextAge() {
+		this.age = this.age + 1;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -49,12 +64,9 @@ public class Person {
 	}
 
 	public static void main(String[] args) {
-		Person minh = new Person();
-		minh.setName("Minh");
-		minh.setAge(18);
-		minh.setGender("Female");
-		minh.setGender("Male");
-		System.out.println(minh.toString());
-		System.out.println(minh.getName());
+		Person p = new Person("Hai", "Female", 21);
+		p.swapGender();
+		System.out.println(p.toString());
+		
 	}
 }
