@@ -89,5 +89,11 @@ public class Person {
 		for (int i = 0; i < n; i++)
 			System.out.println(a[i].toString());
 		
+		Person max = a[0];
+		for (int i = 1; i < n; i++)
+			if (max.getAge() < a[i].getAge())
+				max = a[i];
+		
+		System.out.println("Max = " + max.toString());
 	}
 }
