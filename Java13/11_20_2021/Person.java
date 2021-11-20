@@ -7,7 +7,7 @@ public class Person {
 	public Person() {
 		this.name = "";
 		this.gender = "";
-		this.age = 5;
+		this.age = 0;
 	}
 	
 	public Person(String name, String gender, int age) {
@@ -24,11 +24,23 @@ public class Person {
 		return "[name=" + this.name + ", gender=" + this.gender + ", age=" + this.age + "]";
 	}
 	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
 	public static void main(String[] args) {
-		Person pp = new Person("Hai", "female", 21);
-		System.out.println(pp.toString());
-		
-		Person phu = new Person("Phu", "Female", 18);
-		System.out.println(phu.toString());
+		Person minh = new Person();
+		minh.setName("Minh");
+		minh.setAge(18);
+		minh.setGender("Female");
+		System.out.println(minh.toString());
 	}
 }
