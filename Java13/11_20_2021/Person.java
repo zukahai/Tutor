@@ -1,5 +1,7 @@
 package Main;
 
+import java.util.Scanner;
+
 public class Person {
 	String name, gender;
 	int age;
@@ -64,9 +66,28 @@ public class Person {
 	}
 
 	public static void main(String[] args) {
-		Person p = new Person("Hai", "Female", 21);
-		p.swapGender();
-		System.out.println(p.toString());
+		
+		
+		Scanner input = new Scanner(System.in);
+		System.out.print("N: ");
+		int n = input.nextInt();
+		Person a[] = new Person[n];
+		
+		for (int i = 0; i < n; i++) {
+			System.out.println("Nhap thong tin Person " + (i + 1) + ": ");
+			System.out.print("Name: ");
+			String name = input.next();
+			
+			System.out.print("Gender: ");
+			String gender = input.next();
+			
+			System.out.print("Age: ");
+			int age = input.nextInt();
+			
+			a[i] = new Person(name, gender, age);
+		}
+		for (int i = 0; i < n; i++)
+			System.out.println(a[i].toString());
 		
 	}
 }
