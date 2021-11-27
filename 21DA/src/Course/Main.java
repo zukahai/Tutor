@@ -1,6 +1,8 @@
 package Course;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Main{
@@ -43,32 +45,55 @@ public class Main{
 
 
         // Cap nhap theo id
-        System.out.println("Cap nhat khoa hoc theo ID");
-        System.out.print("Nhap ID: ");
-        int id2 = sc.nextInt();
+        // System.out.println("Cap nhat khoa hoc theo ID");
+        // System.out.print("Nhap ID: ");
+        // int id2 = sc.nextInt();
 
-        boolean check2 = true;
+        // boolean check2 = true;
 
-        for (int i = 0; i < courses.size(); i++)
-            if (courses.get(i).getId() == id2) {
-                sc.nextLine();
-                System.out.print("New Name = ");
-                String name = sc.nextLine();
-                System.out.print("New Credits = ");
-                int credits = sc.nextInt();
-                Course newCourse = new Course(id2, name, credits);
-                courses.set(i, newCourse);
-                check2 = false;
-                break;
-            }
+        // for (int i = 0; i < courses.size(); i++)
+        //     if (courses.get(i).getId() == id2) {
+        //         sc.nextLine();
+        //         System.out.print("New Name = ");
+        //         String name = sc.nextLine();
+        //         System.out.print("New Credits = ");
+        //         int credits = sc.nextInt();
+        //         Course newCourse = new Course(id2, name, credits);
+        //         courses.set(i, newCourse);
+        //         check2 = false;
+        //         break;
+        //     }
         
-        if (check2 == true)
-            System.out.println("Khong tim thay ID");
-        else {
-            System.out.println("Danh Sach sau khi thay doi");
-            for (Course a : courses)
+        // if (check2 == true)
+        //     System.out.println("Khong tim thay ID");
+        // else {
+        //     System.out.println("Danh Sach sau khi thay doi");
+        //     for (Course a : courses)
+        //     System.out.println(a.toString());
+        //     System.out.println();
+        // }
+
+
+        // Sap xep theo Credits
+        Collections.sort(courses, new Comparator<Course>() {
+
+			@Override
+			public int compare(Course o1, Course o2) {
+				// TODO Auto-generated method stub
+				if (o1.getCredits() > o2.getCredits())
+                    return 2021;
+                else
+                    return -1234;
+			}
+        });
+
+        System.out.println("Danh Sach sau khi sap xep theo Credits");
+        for (Course a : courses)
             System.out.println(a.toString());
-            System.out.println();
-        }
+        System.out.println();
     }
 }
+
+//ArrrayList : ... o1 ... o2....
+// compare > 0 : Doi cho o1, o2 
+// compare < 0 : Khong doi cho o1, o2
