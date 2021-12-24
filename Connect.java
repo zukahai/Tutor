@@ -1,0 +1,36 @@
+package ConnectSQL;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.mysql.cj.xdevapi.Statement;
+
+public class Connect {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Connection conn = null;
+		try{
+			   String userName = "root";
+			   String password = "";
+			   String url = "jdbc:mysql://localhost/studentmanagement";
+			   Class.forName ("com.mysql.cj.jdbc.Driver");
+			   conn = DriverManager.getConnection(url, userName, password);
+			   System.out.println("Ok");
+			   
+			   String sql = "SELECT * FROM student";
+			   PreparedStatement stm= conn.prepareStatement(sql);
+			   stm = conn.prepareStatement(sql);
+			   ResultSet rs = stm.executeQuery();
+			   while(rs.next()) {
+				   System.out.println(rs.getString(1) + "\t" + rs.getString(2) + "\t\t" + rs.getInt(3));
+			   }
+			   
+		} catch(Exception e){
+			   System.out.println(e.getMessage());
+		}
+	}
+
+}
