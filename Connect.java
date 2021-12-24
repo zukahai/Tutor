@@ -19,15 +19,6 @@ public class Connect {
 			   Class.forName ("com.mysql.cj.jdbc.Driver");
 			   conn = DriverManager.getConnection(url, userName, password);
 			   System.out.println("Ok");
-			   
-			   String sql = "SELECT * FROM student";
-			   PreparedStatement stm= conn.prepareStatement(sql);
-			   stm = conn.prepareStatement(sql);
-			   ResultSet rs = stm.executeQuery();
-			   while(rs.next()) {
-				   System.out.println(rs.getString(1) + "\t" + rs.getString(2) + "\t\t" + rs.getInt(3));
-			   }
-			   
 		} catch(Exception e){
 			   System.out.println(e.getMessage());
 		}
