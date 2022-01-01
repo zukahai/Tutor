@@ -17,6 +17,13 @@ public class Connect {
 			   Class.forName ("com.mysql.cj.jdbc.Driver");
 			   conn = DriverManager.getConnection(url, userName, password);
 			   System.out.println("Ok");
+			
+			String sql = "SELECT * FROM table21da";
+			   PreparedStatement stm = conn.prepareStatement(sql);
+			   ResultSet rs = stm.executeQuery();
+			   while(rs.next()) {
+				   System.out.println(rs.getInt(1) + "\t" + rs.getString(2));
+			   }
 		} catch(Exception e){
 			   System.out.println(e.getMessage());
 		}
