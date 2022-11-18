@@ -66,7 +66,7 @@
 
 7. Xóa thông tin theo ID
 
-8. Sửa thông tin theo ID
+8. Sửa thông tin theo ID <br>
 *Cho người dùng xem thông tin của đối tưởng cần sửa*<br>
 *Cho phép người dùng sửa lại từng thông tin của đối tượng đó.*
 
