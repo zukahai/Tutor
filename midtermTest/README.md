@@ -1,4 +1,5 @@
 # Quản lý giáo viên sinh viên
+***(Phan Đức Hải - HaiZuka)***
 
 ### Tạo interface IPerson có các hàm:
 - int getYearOfBirth() tính năm sinh của Person
@@ -65,7 +66,7 @@
 
 7. Xóa thông tin theo ID
 
-8. Sửa thông tin theo ID
+8. Sửa thông tin theo ID <br>
 *Cho người dùng xem thông tin của đối tưởng cần sửa*<br>
 *Cho phép người dùng sửa lại từng thông tin của đối tượng đó.*
 
